@@ -213,13 +213,12 @@ seventh entry without any change. Recorded rather than silently skipped.
 
 ## Open items
 
-1. **The app repository has no `LICENSE`.**
-   [github.com/Manus-Systematum/Structor](https://github.com/Manus-Systematum/Structor) is public
-   and unlicensed, which by default means all rights reserved — at odds with
-   the group's stated open-source positioning. The page links the repository and
-   deliberately makes **no licence claim about the app**. Adding MIT there, as
-   in the other repositories, is a one-file change and would let this page say
-   so.
+1. ~~**The app repository has no `LICENSE`.**~~ Resolved 2026-08-23: the app is
+   **MIT**, and the page now says so in the Source bullet — with the qualifier
+   that MIT covers the code and the rules data keeps the terms listed above it,
+   since none of those sources are the project's to relicense. This page is MIT
+   too, and GitHub detects both.
+
 2. **No screenshots.** Needs a representative list built in the simulator first
    — the 2,000 pt T'au reference roster is the obvious candidate — then a
    handful of captures: the builder with a real detachment, the turn page with
