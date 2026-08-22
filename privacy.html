@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Structor — Privacy</title>
+<meta name="description" content="Structor collects nothing. No accounts, no analytics, no tracking, and no network requests.">
+<link rel="canonical" href="https://structor.systematum.net/privacy.html">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="bar bar--top">
+  <div class="bar__inner">
+    <a class="brand" href="index.html">
+      <img class="brand__mark" src="assets/logo-mark.png" alt="" width="128" height="128">
+      <span class="brand__name">Structor</span>
+    </a>
+
+    <nav class="nav" aria-label="Main">
+      <a class="nav__link" href="index.html">The app</a>
+      <a class="nav__link" href="https://systematum.net">Manus Systematum</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top" class="page">
+
+  <section class="panel" aria-labelledby="privacy-heading">
+    <h1 id="privacy-heading" class="panel__heading">Privacy</h1>
+    <p class="panel__lead">
+      Structor collects nothing. This page says what that means in detail,
+      because a claim that short is worth checking.
+    </p>
+
+    <ul class="facts">
+      <li>There is no account. Nothing identifies you to anyone, including us.</li>
+      <li>There is no analytics, no crash reporting, no advertising and no
+        third-party SDK of any kind. The app's entire dependency list is a
+        database engine, a file-path helper and a package-version reader.</li>
+      <li>Your armies, battles and settings are written to a database file
+        inside the app's own storage on the device. Deleting the app deletes
+        them.</li>
+      <li>Nothing is uploaded, because <strong>the app makes no network
+        requests</strong>. Its rules data is compiled into the download from
+        the App Store; there is no server behind it to talk to.</li>
+      <li>Nothing is sold or shared, because nothing is collected in the first
+        place.</li>
+    </ul>
+
+    <p class="note">
+      In Apple's App Privacy terms, every category is answered <em>Data Not
+      Collected</em>.
+    </p>
+  </section>
+
+  <section class="panel" aria-labelledby="detail-heading">
+    <h2 id="detail-heading" class="panel__heading">Two details worth stating</h2>
+    <ul class="facts">
+      <li><strong>Importing a list is a paste into a text field.</strong> The
+        app never reads the clipboard itself — it contains no clipboard code at
+        all; iOS puts the text in when you tap paste. What you paste goes into
+        the local database and nowhere else.</li>
+      <li><strong>A future version may download rules updates.</strong> The code
+        for it exists and is switched off: no address is configured, so no
+        request is made. If that changes, this page changes with it before the
+        version that does it ships, and it will say what is requested and what
+        the request contains.</li>
+    </ul>
+  </section>
+
+  <section class="panel" aria-labelledby="contact-heading">
+    <h2 id="contact-heading" class="panel__heading">Contact and changes</h2>
+    <ul class="facts">
+      <li>Questions about this page go through the form at
+        <a href="https://systematum.net/#support">systematum.net</a>.</li>
+      <li>This page was last changed on 23 August 2026. Earlier versions are in
+        the site's public history at
+        <a href="https://github.com/Manus-Systematum/Structor_server">github.com/Manus-Systematum/Structor_server</a>.</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="bar bar--bottom">
+  <div class="bar__inner bar__inner--footer">
+    <p class="footer__name">Structor</p>
+    <ul class="footer__links">
+      <li><a href="index.html">The app</a></li>
+      <li><a href="https://systematum.net">Manus Systematum</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

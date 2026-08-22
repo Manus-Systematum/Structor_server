@@ -8,7 +8,7 @@ FROM nginxinc/nginx-unprivileged:1.29-alpine
 
 COPY deploy/nginx.conf /etc/nginx/nginx.conf
 
-COPY index.html style.css /usr/share/nginx/html/
+COPY index.html privacy.html style.css /usr/share/nginx/html/
 COPY assets/ /usr/share/nginx/html/assets/
 
 EXPOSE 8080
