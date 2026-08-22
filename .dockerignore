@@ -1,0 +1,7 @@
+# Only the served files belong in the image.
+deploy/
+DESIGN.md
+DEPLOYMENT.md
+.dockerignore
+.DS_Store
+*.md

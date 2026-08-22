@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Structor</title>
+<meta name="description" content="A companion app for Warhammer 40,000 11th edition: army list building and an in-game assistant. Free, open source, offline.">
+<link rel="canonical" href="https://structor.systematum.net/">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="bar bar--top">
+  <div class="bar__inner">
+    <a class="brand" href="#top">
+      <img class="brand__mark" src="assets/logo-mark.png" alt="" width="128" height="128">
+      <span class="brand__name">Structor</span>
+    </a>
+
+    <nav class="nav" aria-label="Main">
+      <a class="nav__link" href="#data">Data</a>
+      <a class="nav__link" href="https://systematum.net">Manus Systematum</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top" class="page">
+
+  <section class="panel panel--hero" aria-labelledby="about-heading">
+    <p class="hero__mark">
+      <img src="assets/logo.png" alt="" width="512" height="512">
+    </p>
+    <div class="hero__body">
+      <h1 id="about-heading" class="panel__heading">A companion for Warhammer 40,000, 11th&nbsp;edition</h1>
+      <p class="statement">
+        Structor builds army lists under the 11th edition detachment rules, and
+        runs beside a game: mission setup, the stratagems available in each
+        phase, victory points, and the statlines you need mid-turn. It works
+        offline and keeps everything on the device.
+      </p>
+      <p class="status">
+        In testing on iOS. Not released yet — there is no download on this page.
+      </p>
+    </div>
+  </section>
+
+  <section class="panel" aria-labelledby="build-heading">
+    <h2 id="build-heading" class="panel__heading">Building a list</h2>
+    <ul class="facts">
+      <li>Thirty-five armies and the core rules are bundled with the app. No
+        account, no download step.</li>
+      <li>Detachment points, enhancement slots, unit caps and wargear limits
+        are checked while the list is built, at the battle size chosen.</li>
+      <li>A price that cannot be resolved is reported as a problem rather than
+        counted as zero, so an incomplete list never reads as a cheap one.</li>
+      <li>Lists exported as plain text from another builder can be pasted in.
+        Names that do not match are listed rather than dropped silently.</li>
+      <li>A saved list keeps a copy of the data it was built from, so a points
+        update changes what you see next time you edit it, not what you
+        already wrote down.</li>
+    </ul>
+  </section>
+
+  <section class="panel" aria-labelledby="play-heading">
+    <h2 id="play-heading" class="panel__heading">During a game</h2>
+    <ul class="facts">
+      <li>Mission, deployment zones and terrain layout, drawn to scale from the
+        published layout data.</li>
+      <li>Each phase lists the stratagems usable in it, with the full printed
+        text and the cost. Using one deducts the CP and records which unit
+        used it, so the same unit cannot quietly use two.</li>
+      <li>Primary and secondary scoring in the card's own wording, with the
+        running total.</li>
+      <li>Unit cards with per-model statlines, wounds and models remaining, and
+        abilities attributed to the datasheet that grants them — a leader's
+        invulnerable save is not silently shared with the squad it joined.</li>
+    </ul>
+  </section>
+
+  <section class="panel" aria-labelledby="limits-heading">
+    <h2 id="limits-heading" class="panel__heading">What it does not do</h2>
+    <ul class="facts">
+      <li>Ability and mission descriptions are summaries written by the data
+        projects, not Games Workshop's printed wording. They are enough to play
+        from; for a rules dispute, use the card or the book.</li>
+      <li>Some of the data is still on a pre-launch provisional dataslate
+        carried over from 10th edition. The app marks that where it applies
+        rather than presenting it as current.</li>
+      <li>Lists cannot yet be sent between devices.</li>
+      <li>Nothing is collected. There are no accounts, no analytics and no
+        tracking, and no part of the app needs a network connection.</li>
+    </ul>
+  </section>
+
+  <section class="panel" id="data" aria-labelledby="data-heading">
+    <h2 id="data-heading" class="panel__heading">Where the data comes from</h2>
+    <p class="panel__lead">
+      Structor holds no rules data of its own. Everything it shows comes from
+      the community projects below, and their terms are the terms this app
+      ships under.
+    </p>
+
+    <ul class="sources">
+      <li class="source">
+        <h3 class="source__name">Powered by 40kdc-data</h3>
+        <p class="source__link"><a href="https://40kdc.alpacasoft.dev">40kdc.alpacasoft.dev</a></p>
+        <p class="source__text">
+          Datasheets, weapons, abilities, missions, and stratagem costs and
+          phases. Licensed CC BY 4.0 © Alpaca Software and the 40kdc community
+          contributors; its schemas are CC0. Changes were made: the data is
+          repackaged into compressed bundles, corrected in a recorded set of
+          places where it is wrong, and rendered by the app.
+        </p>
+      </li>
+
+      <li class="source">
+        <h3 class="source__name">Powered by Wahapedia</h3>
+        <p class="source__link"><a href="https://wahapedia.ru/wh40k11ed/">wahapedia.ru/wh40k11ed</a></p>
+        <p class="source__text">
+          The rules text of the stratagems, from Wahapedia's published data
+          export, which asks to be credited in this phrasing.
+        </p>
+      </li>
+
+      <li class="source">
+        <h3 class="source__name">Stratagem card generator</h3>
+        <p class="source__link"><a href="https://github.com/pguetschow/warhammer-40k-stratagem-card-generator">github.com/pguetschow/warhammer-40k-stratagem-card-generator</a></p>
+        <p class="source__text">
+          The eleven Core Stratagems, transcribed there from the free Warhammer
+          40,000 Core Rules. MIT licensed.
+        </p>
+      </li>
+
+      <li class="source">
+        <h3 class="source__name">BSData / wh40k-11e</h3>
+        <p class="source__link"><a href="https://github.com/BSData/wh40k-11e">github.com/BSData/wh40k-11e</a></p>
+        <p class="source__text">
+          Datasheet and ability text. The repository carries no licence file.
+          Asked directly, the maintainers replied that the organisation often
+          does not attach one, that the repository is intended to be open
+          source, and that it may be cloned and altered freely
+          (<a href="https://github.com/BSData/wh40k-11e/issues/918">issue 918</a>).
+          That is permission rather than a licence, and it is recorded here as
+          the weaker thing it is.
+        </p>
+      </li>
+
+      <li class="source">
+        <h3 class="source__name">BSData / wh40k-11e-mfm</h3>
+        <p class="source__link"><a href="https://github.com/BSData/wh40k-11e-mfm">github.com/BSData/wh40k-11e-mfm</a></p>
+        <p class="source__text">
+          Games Workshop's published Munitorum points, parsed from
+          <span class="nowrap">mfm.warhammer-community.com</span> and used as an
+          independent check on the points above. MIT licensed.
+        </p>
+      </li>
+
+      <li class="source">
+        <h3 class="source__name">gdmissions.app</h3>
+        <p class="source__link"><a href="https://gdmissions.app">gdmissions.app</a></p>
+        <p class="source__text">
+          The sentence printed on each mission card, where the app would
+          otherwise show a paraphrase. The site publishes no licence, terms or
+          attribution notice of any kind, so this credit is the only footing
+          the use has.
+        </p>
+      </li>
+    </ul>
+
+    <p class="note">
+      Warhammer 40,000 and all associated names, marks and imagery are
+      © Games Workshop Limited. Structor is unofficial, and is neither endorsed
+      by nor affiliated with Games Workshop.
+    </p>
+  </section>
+
+  <section class="panel" aria-labelledby="source-heading">
+    <h2 id="source-heading" class="panel__heading">Source and contact</h2>
+    <ul class="facts">
+      <li>The app is written in Dart and Flutter. Its source, its design record
+        and the corrections applied to the upstream data are at
+        <a href="https://github.com/Manus-Systematum/Structor">github.com/Manus-Systematum/Structor</a>.</li>
+      <li>Bug reports, corrections and questions go through the form at
+        <a href="https://systematum.net/#support">systematum.net</a>.</li>
+      <li>Structor is free, and is funded by user support rather than by
+        charging for the app or carrying promotions.</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="bar bar--bottom">
+  <div class="bar__inner bar__inner--footer">
+    <p class="footer__name">Structor</p>
+    <ul class="footer__links">
+      <li><a href="https://systematum.net">Manus Systematum</a></li>
+      <li><a href="#data">Data and credits</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

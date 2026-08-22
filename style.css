@@ -1,0 +1,299 @@
+/* Structor — landing page.
+   Same visual language as systematum.net, deliberately: this is a subdomain of
+   that distribution and should read as one. Tokens, spacing grid, elevation and
+   type stack are carried over unchanged; what differs is the content, and the
+   two rules this page needs that page does not (.facts and .sources).
+
+   Material-derived: flat surfaces, one elevation step, 4px spacing grid, 48px
+   touch targets. No transitions, no parallax, no reveal-on-scroll. */
+
+:root {
+  /* Carried from systematum.net, which took them from the group's logo. The
+     Structor app icon happens to be drawn in the same two colours, so the
+     helmet needs no adjustment to sit on the navy. */
+  --navy:        #0b1c36;  /* header, footer, the logo tile */
+  --navy-deep:   #05101f;  /* hover on navy */
+  --navy-ink:    #123258;  /* headings on pale blue */
+  --page:        #f1e7d3;  /* pale gold — the pinned background */
+  --panel:       #dbe7f5;  /* the sections */
+  --surface:     #f9fbfd;  /* source cards, inside the panels */
+  --gold:        #ca994b;  /* accent: heading rules, the bars' edge, list marks */
+  --ink:         #16202e;
+  --ink-muted:   #4d5e73;
+  --hairline:    rgba(11, 28, 54, 0.10);
+  --on-navy:     #ffffff;
+
+  --font: Calibri, Carlito, "Segoe UI", Candara, "Trebuchet MS", system-ui,
+          -apple-system, sans-serif;
+
+  --radius: 6px;
+  --shadow:     0 1px 2px rgba(5, 16, 31, 0.10), 0 2px 8px rgba(5, 16, 31, 0.07);
+  --shadow-bar: 0 1px 4px rgba(5, 16, 31, 0.28);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--ink);
+
+  background-color: var(--page);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28'%3E%3Ccircle cx='2' cy='2' r='1' fill='%23ca994b' fill-opacity='0.22'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
+a { color: inherit; }
+
+img { max-width: 100%; height: auto; }
+
+h1, h2, h3 { margin: 0; font-weight: 600; line-height: 1.25; }
+
+.nowrap { white-space: nowrap; }
+
+/* ---------------------------------------------------------------- bars --- */
+
+.bar { background: var(--navy); color: var(--on-navy); }
+
+.bar--top    { border-bottom: 2px solid var(--gold); box-shadow: var(--shadow-bar); }
+.bar--bottom { border-top: 2px solid var(--gold); }
+
+.bar__inner {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 20px;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  text-decoration: none;
+}
+
+.brand__mark { width: 44px; height: 44px; }
+
+.brand__name {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+}
+
+.nav { display: flex; align-items: center; gap: 4px; }
+
+.nav__link {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 14px;
+  font-size: 16px;
+  color: var(--on-navy);
+  text-decoration: none;
+  border-radius: var(--radius);
+}
+
+.nav__link:hover { background: var(--navy-deep); }
+
+/* ----------------------------------------------------- central section --- */
+
+.page {
+  max-width: 920px;
+  margin: 32px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.panel {
+  background: var(--panel);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 30px 30px 34px;
+}
+
+.panel__heading {
+  font-size: 23px;
+  color: var(--navy-ink);
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--gold);
+  margin-bottom: 18px;
+}
+
+.panel__lead { margin: 0 0 20px; max-width: 68ch; }
+
+/* ---------------------------------------------------------------- hero --- */
+
+.panel--hero { display: flex; align-items: flex-start; gap: 30px; }
+
+/* The mark is gold line art and needs a dark ground. A rounded tile rather
+   than the circle systematum.net uses, because this is the app's own icon and
+   an app icon is a squircle everywhere else it appears. */
+.hero__mark {
+  flex: none;
+  margin: 0;
+  width: 146px;
+  height: 146px;
+  border-radius: 26px;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+}
+
+.hero__mark img { width: 122px; height: 122px; }
+
+.hero__body { min-width: 0; }
+
+.statement { margin: 0; font-size: 17px; max-width: 60ch; }
+
+/* The one line on the page a reader might act on wrongly: it says there is no
+   download. Set apart so it is not skimmed past, without an alert colour —
+   nothing here is a warning. */
+.status {
+  margin: 16px 0 0;
+  padding: 10px 14px;
+  background: var(--surface);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  max-width: 60ch;
+}
+
+/* --------------------------------------------------------------- lists --- */
+
+/* Custom marker: the default bullet sits too tight to the text at this size,
+   and a gold one ties the lists to the heading rules. */
+.facts {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 72ch;
+}
+
+.facts li {
+  position: relative;
+  padding-left: 20px;
+}
+
+.facts li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.62em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.facts a { text-decoration: underline; }
+
+/* -------------------------------------------------------------- sources --- */
+
+.sources {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* A card each, rather than one long list: the licence terms are the point of
+   this section, and each source's terms are a separate fact from its
+   neighbour's. */
+.source {
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 16px 18px 18px;
+}
+
+.source__name { font-size: 18px; color: var(--navy-ink); }
+
+.source__link {
+  margin: 2px 0 8px;
+  font-size: 14px;
+  word-break: break-word;
+}
+
+.source__link a { color: var(--ink-muted); }
+
+.source__text { margin: 0; max-width: 72ch; }
+
+.source__text a { text-decoration: underline; }
+
+.note {
+  margin: 22px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--hairline);
+  font-size: 14px;
+  color: var(--ink-muted);
+  max-width: 72ch;
+}
+
+a:focus-visible,
+.nav__link:focus-visible,
+.brand:focus-visible {
+  outline: 3px solid var(--navy);
+  outline-offset: 2px;
+}
+
+/* ------------------------------------------------------------- footer --- */
+
+.bar__inner--footer { flex-wrap: wrap; padding-top: 14px; padding-bottom: 14px; }
+
+.footer__name { margin: 0; font-weight: 600; }
+
+.footer__links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.footer__links a {
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 10px;
+  text-decoration: none;
+  border-radius: var(--radius);
+}
+
+.footer__links a:hover { background: var(--navy-deep); text-decoration: underline; }
+
+/* ------------------------------------------------------------- narrow --- */
+
+@media (max-width: 700px) {
+  .panel--hero { flex-direction: column; align-items: center; gap: 22px; }
+  .hero__mark { width: 128px; height: 128px; border-radius: 24px; }
+  .hero__mark img { width: 106px; height: 106px; }
+}
+
+@media (max-width: 620px) {
+  .bar__inner { flex-wrap: wrap; padding-top: 12px; padding-bottom: 12px; }
+  .brand__name { font-size: 18px; }
+  .brand__mark { width: 40px; height: 40px; }
+  .page { margin: 22px auto; }
+  .panel { padding: 24px 20px 28px; }
+  .panel__heading { font-size: 21px; }
+  .nav__link { padding: 0 10px; }
+}
