@@ -3,9 +3,8 @@
 Authoritative record of decisions for this page. Reversed decisions are marked
 superseded with the reason rather than deleted.
 
-Status: first build, 2026-08-22. The page is written; it is not deployed, and
-the host still serves a placeholder (see `DEPLOYMENT.md`). Open items at the
-end.
+Status: first build, 2026-08-22, live the same day at
+structor.systematum.net. Open items at the end.
 
 The page describes **Structor**, the Warhammer 40,000 11th edition companion
 app in `Wh40k_Companion/`, published under the **manus systematum** name.
@@ -228,8 +227,10 @@ seventh entry without any change. Recorded rather than silently skipped.
 3. **The About screen's "No Games Workshop rules text is distributed with it"
    is stale**, since stratagem text was added. This page does not repeat it; the
    screen should be corrected in the app repository.
-4. **Not deployed.** The `structor` service on the host is still the stock nginx
-   placeholder; see `DEPLOYMENT.md` for the one-time compose change.
+4. ~~**Not deployed.**~~ Done 2026-08-22: the host's `structor` service was
+   changed from the stock `nginx:alpine` placeholder to a build of this repo,
+   in the same shape as `apex` — read-only root, all capabilities dropped,
+   published on loopback only. See `DEPLOYMENT.md`.
 5. **No Android statement.** Flutter targets both, only iOS has been built and
    tested, so the page says "In testing on iOS" and nothing about Android. When
    an Android build exists this line needs revisiting rather than extending.
