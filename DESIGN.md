@@ -130,9 +130,20 @@ impose something concrete, and the wording on the page satisfies it:
   The page says that too. Softening it to "with thanks to gdmissions.app" would
   have implied a permission nobody granted.
 
-Games Workshop's trademark notice sits at the end of that section, once. It is
-not repeated in the footer: two notices read as a legal department, and there
+Games Workshop's notice sits at the end of that section, once. It is not
+repeated in the footer: two notices read as a legal department, and there
 isn't one.
+
+**It says three things, and the middle one was added on 2026-08-23.** That
+everything the app knows was collected from the openly published sources listed
+directly above it — which is what the six entries are evidence for, so the
+sentence is a summary of the section rather than a claim on its own. That
+Games Workshop's rights cover not only the names, marks and imagery but **any
+wording that matches their printed rules**, which is the honest reading given
+§3.12 put the stratagem text in the app. And that the app is unofficial and
+unaffiliated. Acknowledging the third of those without the second would have
+been the narrower claim, and the narrower claim is the one that reads as
+avoidance.
 
 ---
 
