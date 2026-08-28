@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Structor — Privacy</title>
-<meta name="description" content="Structor collects nothing. No accounts, no analytics, no tracking, and no network requests.">
+<meta name="description" content="Structor collects nothing. No accounts, no analytics, no tracking. The only thing it sends is a request for its own rules data.">
 <link rel="canonical" href="https://structor.systematum.net/privacy.html">
 <link rel="icon" href="assets/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -43,16 +43,25 @@
       <li>Your armies, battles and settings are written to a database file
         inside the app's own storage on the device. Deleting the app deletes
         them.</li>
-      <li>Nothing is uploaded, because <strong>the app makes no network
-        requests</strong>. Its rules data is compiled into the download from
-        the App Store; there is no server behind it to talk to.</li>
+      <li>Nothing is uploaded. <strong>The app makes one kind of request, and
+        it asks for rules data</strong>: a small list of what the current data
+        is, read from structor.systematum.net when the app starts, and then
+        only the files named in it that the app does not already have. It
+        carries no account, no identifier and nothing about your armies —
+        it is the same kind of request a browser makes for a page.</li>
+      <li>The server that answers is ours, and it sees what any web server
+        sees: the address the request came from, the file asked for, and the
+        time. Those lines are kept while the container that wrote them runs
+        and are read only to see whether the data is being served correctly.
+        Cloudflare sits in front of it and sees the same.</li>
       <li>Nothing is sold or shared, because nothing is collected in the first
         place.</li>
     </ul>
 
     <p class="note">
-      In Apple's App Privacy terms, every category is answered <em>Data Not
-      Collected</em>.
+      Nothing here is collected <em>from you</em>: no account, no identifier,
+      nothing linked to a person, and nothing used to track anyone across
+      apps or sites. What the server records is the request, not the reader.
     </p>
   </section>
 
@@ -63,11 +72,13 @@
         app never reads the clipboard itself — it contains no clipboard code at
         all; iOS puts the text in when you tap paste. What you paste goes into
         the local database and nowhere else.</li>
-      <li><strong>A future version may download rules updates.</strong> The code
-        for it exists and is switched off: no address is configured, so no
-        request is made. If that changes, this page changes with it before the
-        version that does it ships, and it will say what is requested and what
-        the request contains.</li>
+      <li><strong>The rules updates named above arrive as data, not as new
+        versions of the app.</strong> Games Workshop corrects points and
+        wording more often than an app can be released, so a correction is
+        published as a file and the app reads it. Until 28 August 2026 this
+        page said the app made no requests at all, which was true of every
+        version before that one and stopped being true when the data was
+        published; the sentence above replaced it.</li>
     </ul>
   </section>
 
@@ -76,7 +87,7 @@
     <ul class="facts">
       <li>Questions about this page go through the form at
         <a href="https://systematum.net/#support">systematum.net</a>.</li>
-      <li>This page was last changed on 23 August 2026. Earlier versions are in
+      <li>This page was last changed on 29 August 2026. Earlier versions are in
         the site's public history at
         <a href="https://github.com/Manus-Systematum/Structor_server">github.com/Manus-Systematum/Structor_server</a>.</li>
     </ul>
