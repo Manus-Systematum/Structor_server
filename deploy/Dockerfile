@@ -11,6 +11,11 @@ COPY deploy/nginx.conf /etc/nginx/nginx.conf
 COPY index.html privacy.html style.css /usr/share/nginx/html/
 COPY assets/ /usr/share/nginx/html/assets/
 
+# The dataset the app fetches. Staged into the build context by
+# deploy/deploy.sh from the Structor repository — it is not kept in this one,
+# which holds a web page.
+COPY data/ /usr/share/nginx/html/data/
+
 EXPOSE 8080
 
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \

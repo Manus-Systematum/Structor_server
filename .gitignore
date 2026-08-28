@@ -4,3 +4,4 @@ deploy/.env
 # Names the host, its addresses and the tunnel — see DEPLOYMENT.md.
 DEPLOYMENT.md
 deploy/deploy.sh
+data/
